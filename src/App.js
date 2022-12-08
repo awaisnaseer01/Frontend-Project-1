@@ -1,23 +1,43 @@
-import logo from './logo.svg';
+
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbar from './Components/Navbar';
+import Homescreen from './Pages/Homescreen';
+import Register from './Pages/Register';
+import Login from './Pages/Login';
+import {Route, Routes} from 'react-router-dom'
+import Practice from './Pages/Practice';
+import Practice2 from './Pages/Practice2';
+import Practice3 from './Pages/Practice3';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <Navbar />
+      
+      
+
+      
+
+      {/* <Practice3 /> */}
+      {/* <Practice />
+      <Practice2 /> */}
+
+      
+      
+      <Routes>
+      <Route path="/home" element={<Homescreen />} />
+
+      <Route path="/register" element={<Register />} />
+
+      <Route path="/Login" element={<Login />} />
+      </Routes>
+      
+      
+      
+      
     </div>
   );
 }
