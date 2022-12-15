@@ -22,8 +22,8 @@ function Login() {
 
 
   return (
-   <div>
-    <div className="row justify-content-center mt-5">
+   <div >
+    <div className="row justify-content-center mt-5 mb-10">
         <div className="col-md-5">
            <div className='bs'>
             <h1>Login</h1>
@@ -33,7 +33,7 @@ function Login() {
            </div>
         </div>
     </div>
-   </div>
+   </div> 
   )
 }
 
