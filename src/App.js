@@ -5,32 +5,45 @@ import Homescreen from "./Pages/Homescreen";
 import Register from "./Pages/Register";
 import Login from "./Pages/Login";
 import { Route, Routes } from "react-router-dom";
-import Practice from "./Pages/Practice";
-import Practice2 from "./Pages/Practice2";
-import Practice3 from "./Pages/Practice3";
-import Sidebar from "./Components/Sidebar";
+
 import Booking from "./Pages/Booking";
-import Modal from "./Pages/Modal";
-import Footer from "./Components/Footer";
+
+
+import Profilescreen from "./Pages/Profilescreen";
+import Adminscreen from "./Pages/Adminscreen";
+import Landingscreen from "./Pages/Landingscreen";
 
 function App() {
+  const user = JSON.parse(localStorage.getItem("currentUser"));
+  
   return (
+    
     <div className="App">
       <Navbar />
+      
+      
 
       <Routes>
-        <Route path="/" element={<Homescreen />} />
+      {user ? (<Route path="/Login" element={<Login />} />) : (<Route path="/" element={<Login />} />)}
+
+      <Route path="/Login" element={<Login />} />
+        
+        <Route path="/home" element={<Homescreen />} />
 
         <Route path="/register" element={<Register />} />
 
-        <Route path="/Login" element={<Login />} />
-
         <Route path="/booking" element={<Booking />} />
 
-        <Route path="/modal" element={<Modal />} />
-      </Routes>
+        
 
-     
+        <Route path="/profile" element={<Profilescreen />} />
+
+        <Route path="/admin" element={<Adminscreen />} />
+
+        <Route path="/" element={<Landingscreen />} />
+        
+      </Routes>
+      
     </div>
   );
 }
