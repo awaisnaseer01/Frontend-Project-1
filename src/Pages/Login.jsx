@@ -45,7 +45,7 @@ function Login() {
     {loading ? (<Loader />)  : ( 
       <div className="row justify-content-center mt-5 mb-10">
         <div className="col-md-5">
-          {error && (<Errors message='Invalid Username or Password' />)}
+        {error && (<Errors message='Invalid Username or Password' />)}
           <div className="bs">
             <h1>Login</h1>
             <input
@@ -70,7 +70,9 @@ function Login() {
               Login
             </button>
             <p className="mt-4">Not have an Account ? Click here for <Link to="/register">Register.</Link></p>
+          
           </div>
+
         </div>
       </div>
       )}

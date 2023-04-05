@@ -66,9 +66,6 @@ export function MyBookings() {
   }, []);
 
   async function cancelBooking(bookingid, roomid)  {
-
-    
-    
     try {
       setloading(true);
       const result = await axios.post("/api/bookings/cancelbooking", { bookingid:bookingid, roomid:roomid })
@@ -81,7 +78,7 @@ export function MyBookings() {
       console.log(error);
       setloading(false);
       Swal.fire('Oops' , 'Something went wrong' , 'error')
-    }
+    } 
   }
 
   // useEffect(async()=>{
